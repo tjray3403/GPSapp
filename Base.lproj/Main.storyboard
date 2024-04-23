@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tray_MapGPS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qsK-yl-0Pf">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TOO-0l-fPJ">
+                                <rect key="frame" x="17" y="80" width="51" height="31"/>
+                                <connections>
+                                    <action selector="ChangeMapType:" destination="BYZ-38-t0r" eventType="valueChanged" id="Nvq-MK-XJF"/>
+                                </connections>
+                            </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="98y-yU-aCS">
+                                <rect key="frame" x="94.666666666666686" y="767" width="204" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="lue-62-Smj"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="ZoonInOut:" destination="BYZ-38-t0r" eventType="valueChanged" id="0Xe-Mf-lEu"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qsK-yl-0Pf" secondAttribute="bottom" id="KoI-F5-7Fl"/>
+                            <constraint firstItem="98y-yU-aCS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RYw-I6-qLD"/>
+                            <constraint firstItem="TOO-0l-fPJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="Udb-wd-rbl"/>
+                            <constraint firstItem="qsK-yl-0Pf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XOt-xJ-068"/>
+                            <constraint firstItem="TOO-0l-fPJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="efA-I5-6Ij"/>
+                            <constraint firstItem="qsK-yl-0Pf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lfT-Mv-cD0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="98y-yU-aCS" secondAttribute="bottom" constant="21" id="m3f-Dl-jIv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qsK-yl-0Pf" secondAttribute="trailing" id="tCx-kR-N1T"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapSwitch" destination="TOO-0l-fPJ" id="bJa-Jg-qs1"/>
+                        <outlet property="myMap" destination="qsK-yl-0Pf" id="16p-Xg-Q52"/>
+                        <outlet property="zoomSlider" destination="98y-yU-aCS" id="Ifj-aZ-Lzg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="-27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
